@@ -6,6 +6,6 @@ class Program
     {
         Console.WriteLine("Howdy, potates!");
         Console.ReadLine();
-        string answer = Console.ReadLine();
+        // string answer = Console.ReadLine();
     }
 }
