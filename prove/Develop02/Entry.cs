@@ -12,7 +12,7 @@ class Entry
 
     public void Note()
     {
-        _entry = $"{_name} {_date}\n{_prompt}\n{_note}";
+        _entry = $"{_name} @ {_date}\n{_prompt}\n{_note}\n";
 
     }
     

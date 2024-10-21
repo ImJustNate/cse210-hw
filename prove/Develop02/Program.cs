@@ -44,13 +44,15 @@ class Program
         // string randomPrompt = Prompts[randomIndex];  
         // // generates random prompt
 
+        Journal journal = new();
         string x = "";
+        string setName = "1";
+
         while (x != "6"){
             Console.WriteLine("Your options are:\n 1. Write a new entry\n 2. Display the journal\n 3. Save the journal to a file\n 4. Load the journal from a file\n 5. Change name\n 6. End program");
             x = Console.ReadLine();
             Console.WriteLine(x);
 
-            Journal journal = new();
 
             Entry entry = new();
 
@@ -95,28 +97,51 @@ class Program
                 // generates random prompt
 
 
+                if (setName == "1"){
+                    Console.WriteLine("What is your name?");
+                    setName = Console.ReadLine();
+                    entry._name = setName;
+                }
+                else{
+                entry._name = setName;
+                }
+
 
                 entry._date = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
-                Console.WriteLine("What is your name?");
-                entry._name = Console.ReadLine();
                 entry._prompt = randomPrompt;
                 Console.Write(entry._prompt);
                 entry._note = Console.ReadLine();
 
                 entry.Note();
-                journal._journal.Append(entry._entry);
+                Console.WriteLine(entry._entry);
+                journal._journal.Add(entry._entry);
+
+                // //testing
+                // foreach (string thought in journal._journal)
+                // {
+                //     Console.WriteLine(thought);
+                //     Console.WriteLine("one");
+                // }
 
             }
             else if( x == "2"){
-                foreach (string temp_entry in journal._journal){
-                Console.WriteLine(temp_entry);
+                foreach (string thought in journal._journal){
+                    Console.WriteLine(thought);
                 }
-                // Console.WriteLine(entry._entry);
-                Console.WriteLine("end the world");
+                // Console.WriteLine("end the world");
 
             }
             else if( x == "3"){
                 journal.Save();
+            }
+
+            else if( x == "4"){
+                journal.Load();
+            }
+
+            else if( x == "5"){
+                Console.WriteLine($"Your name is {setName}. \nWhat would you like your name to be now?");
+                setName = Console.ReadLine();
             }
 
             else
