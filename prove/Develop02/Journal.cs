@@ -32,6 +32,7 @@ class Journal
         }
     }
     }
+    
     public void Load()
     {
         string[] lines = System.IO.File.ReadAllLines(_fileName);

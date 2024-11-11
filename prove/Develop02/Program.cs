@@ -54,8 +54,6 @@ class Program
         while (x != "6"){
             Console.WriteLine("Your options are:\n 1. Write a new entry\n 2. Display the journal\n 3. Save the journal to a file\n 4. Load the journal from a file\n 5. Change name\n 6. End program");
             x = Console.ReadLine();
-            Console.WriteLine(x);
-
 
             Entry entry = new();
 
