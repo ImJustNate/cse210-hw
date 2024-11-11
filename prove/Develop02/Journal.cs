@@ -10,6 +10,17 @@ class Journal
 
 
 
+    public void AppendEntry(string tempEntry){
+        _journal.Add(tempEntry);
+    }
+
+    public void Display(){
+        foreach (string thought in _journal){
+            Console.WriteLine(thought);
+        }
+
+    }    
+
     public void Save()
     {
     using (StreamWriter outputFile = new StreamWriter("myFile.txt"))
@@ -24,6 +35,8 @@ class Journal
     public void Load()
     {
         string[] lines = System.IO.File.ReadAllLines(_fileName);
+
+        _journal = [];
 
 
         foreach (string line in lines)
