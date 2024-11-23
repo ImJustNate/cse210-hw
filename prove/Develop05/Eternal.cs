@@ -1,9 +1,8 @@
- class Simple : Goals
+class Eternal : Goals
 {
-    private bool _isCompleted  = false;
 
     public override  int SetPointValue(){
-        Console.WriteLine($"How many points is {_goalName} worth?");
+        Console.WriteLine($"How many points is {_goalName} worth each time it is completed?");
         string tempString = Console.ReadLine();
         int tempNum = Convert.ToInt32(tempString);
         return tempNum;
@@ -12,28 +11,19 @@
     _goalName = name;
     _goalDescription = description;
     _pointValue = points;
-    _isCompleted = completed;
     }
+
     public override int CompleteGoal(){
-        _isCompleted = true;
         Console.WriteLine($"Nice job here are {_pointValue} points for completing {_goalName}");
         return _pointValue;
-
     }
-
-    public bool isCompleted(){
-        return _isCompleted;
-    }
+    
     public override string ReturnGoal(){
-        return $"SG|{_goalName}|{_goalDescription}|{_pointValue}|{_isCompleted}";
+        return $"EG|{_goalName}|{_goalDescription}|{_pointValue}";
     }
     public override string DisplayGoal(){
-        if (_isCompleted){
-            return $"[X] {_goalName} ({_goalDescription})";
-        }
-        else{
-            return $"[ ] {_goalName} ({_goalDescription})";   
-        }
+        return $"[ ] {_goalName} ({_goalDescription})";
     }
+    
 
 }

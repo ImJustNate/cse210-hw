@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 public abstract class Goals
 {
     //attribute (member variables)
@@ -5,7 +7,7 @@ public abstract class Goals
     public string _goalDescription;
     public int _pointValue;
 
-    public Goals(){
+    public void SetGoal(){
         Console.WriteLine("What is the name of your goal?");
         _goalName = Console.ReadLine();
         Console.WriteLine("What is a short description of it?");
@@ -14,7 +16,10 @@ public abstract class Goals
     }
 
     public abstract int SetPointValue();
-    public abstract void CompleteGoal();
+    public abstract int CompleteGoal();
+    public abstract string ReturnGoal();
+    public abstract string DisplayGoal();
+    public abstract void NewGoalForGoalList(string name, string description, int points, bool completed = true, int isCompleted = 0, int timesToComplete = 0, int bonus = 0);
 
 
     public string GetGoal(){
