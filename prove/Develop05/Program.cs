@@ -7,6 +7,7 @@ class Program
         GoalList Goals = new();
 
         //Menu
+        
         while (true){
             Goals.GetTotalPoints();
 
