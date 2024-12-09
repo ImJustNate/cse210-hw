@@ -10,7 +10,7 @@ class Scoreboard{
         _paper= _magicWizard.ReturnPaper();
         _scissors = _magicWizard.ReturnScissors();
     }
-    public string Fight(Card playerCard, Card opponentCard){
+    public string Fight(Card playerCard, Card opponentCard, int roundCounter){
         string outcome;
 
         if (playerCard.ReturnCard() == opponentCard.ReturnCard()){
@@ -45,15 +45,15 @@ class Scoreboard{
         else if (opponentCard.ReturnCard()== "win"){
             if (playerCard.ReturnCard()== "Paper"){
                 Card scissors = new("3");
-                return Fight(playerCard, scissors);
+                return Fight(playerCard, scissors, roundCounter);
             }
             else if (playerCard.ReturnCard()== "Rock"){
                 Card paper = new("2");
-                return Fight(playerCard, paper);
+                return Fight(playerCard, paper, roundCounter);
             }
             else{
                 Card rock = new("1");
-                return Fight(playerCard, rock);
+                return Fight(playerCard, rock, roundCounter);
             }
         }
         else if (opponentCard.ReturnCard()== "loose"){
@@ -63,6 +63,8 @@ class Scoreboard{
         else{
             outcome = "rut ro raggie!";
         }
+
+
 
         List<string> outcomePage = [
         " _______________________________________________ ",
@@ -85,6 +87,11 @@ class Scoreboard{
         "|_______________________________________________|" 
         ];
 
+        Console.Clear();
+        
+        
+        _magicWizard.DisplayRoundCounter(roundCounter);
+
         for (int i = 0; i < 18 ; i++) {
             
             Console.WriteLine("{0,53}{1,53}{2,53}",
@@ -94,7 +101,6 @@ class Scoreboard{
                 );
         }
         
-        Console.WriteLine(outcome);
         return outcome;
     }
 }

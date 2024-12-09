@@ -20,16 +20,17 @@ class Program
 
         player1.SelectHand([]);
 
+        
+            int roundCounter = 1;
+
+            magicWizard.DisplayRoundCounter(roundCounter);
+            magicWizard.DisplayBattleField();
 
         while(opponent.HasHand() && player1.HasHand()){
-        tracker.Fight(player1.SelectCard(), opponent.SelectCard(boss.PlayStyle()));
-        // player1.SelectCard().Display();
-        // opponent.SelectCard(boss.PlayStyle()).Display();
-        Console.WriteLine("Press enter to continue");
-        Console.ReadLine();
-        Console.Clear();
+            tracker.Fight(player1.SelectCard(), opponent.SelectCard(boss.PlayStyle()), roundCounter);
+            roundCounter ++;
         }
-
+        player1.DisplayHandSelectionList();
         
         
     }

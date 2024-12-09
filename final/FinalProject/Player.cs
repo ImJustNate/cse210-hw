@@ -3,26 +3,32 @@ class Player : Person{
     // private List<string> _car = [];
 
     public override void SelectHand(List<string> hobo){
+        Console.WriteLine("TO SELECT CARD ONE:");
         _magicWizard.DisplayOptions();
         Card card1 = new(Console.ReadLine());
         List<string> animation1 = card1.ReturnAnimationList();
         _hand.Add(card1);
         
         Thread.Sleep(100);
+        Console.Clear();
 
+        Console.WriteLine("TO SELECT CARD TWO:");
         _magicWizard.DisplayOptions();
         Card card2 = new(Console.ReadLine());
         List<string> animation2 = card2.ReturnAnimationList();
         _hand.Add(card2);
 
         Thread.Sleep(100);
+        Console.Clear();
 
+        Console.WriteLine("TO SELECT CARD THREE:");
         _magicWizard.DisplayOptions();
         Card card3 = new(Console.ReadLine());
         List<string> animation3 = card3.ReturnAnimationList();
         _hand.Add(card3);
 
         Thread.Sleep(100);
+        Console.Clear();
 
         // _hand[1].Loss(); // testing only delete later!
         

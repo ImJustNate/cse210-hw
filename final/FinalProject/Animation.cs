@@ -234,4 +234,31 @@ class Animation
     public List<string> ReturnScissors(){
         return _ScissorsList;
     }
+
+    public void DisplayBattleField(){
+            Console.WriteLine ("     _______________________________________________      _______________________________________________      _______________________________________________ ");
+            Console.WriteLine ("    |                                               |    |                                               |    |                                               |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                  _________                    |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                /          \\                   |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                |           |                  |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                |           |                  |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                            |                  |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                          __                   |");
+            Console.WriteLine ("    |                                               |    |                       vs                      |    |                        __                     |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                      __                       |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                      |                        |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                      |                        |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                                               |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                     ___                       |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                    |___|                      |");
+            Console.WriteLine ("    |                                               |    |                                               |    |                                               |");
+            Console.WriteLine ("    |_______________________________________________|    |_______________________________________________|    |_______________________________________________|");
+    }
+
+public void DisplayRoundCounter(int roundCounter){
+            Console.WriteLine ("\t\t ______________________________________________________________________________________________________________________________");
+            Console.WriteLine ("\t\t|                                                                                                                              |");
+            Console.WriteLine ($"\t\t|                                R   O   U   N   D                 {roundCounter}                      F   I   G   H   T                    |");
+            Console.WriteLine ("\t\t|______________________________________________________________________________________________________________________________|");
+}
 } 
