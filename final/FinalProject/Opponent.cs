@@ -124,6 +124,7 @@ class Opponent : Person{
                     return win;
                 }
             }
+            
             else if (wayToSelectACard == "Loose"){
                 int livesLost = 0;
                 foreach(Card card in _hand){

@@ -1,19 +1,14 @@
 class OpponentList{
     public List<List<string>> _LucyKyn = 
         [["1", "2", "3"], ["Loose"]];
-    private bool _LucyKynIsDefeated = false;
     public List<List<string>> _OrigamiMan = 
         [["2", "2", "2"], ["rand"]];
-    private bool _OrigamiManIsDefeated = false;
     public List<List<string>> _LandSlide = 
         [["1", "1", "3"], ["complexRock"]];
-    private bool _LandSlideIsDefeated = false;    
     public List<List<string>> _Radium = 
         [["random"], ["rand"]];
-    private bool _RadiumIsDefeated = false;
     public List<List<string>> _CheaterFace = 
         [["random"], ["win"]];
-    private bool _CheaterFaceIsDefeated = false;
     private string _playStyle = "";
 
     public List<string> Menu(){

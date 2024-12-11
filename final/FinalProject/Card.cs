@@ -35,6 +35,34 @@ class Card{
                 Console.WriteLine("Improper selection input! \nPlease select card options '1', '2', or '3' by typing just the number 1, 2, or 3");
                 _magicWizard.DisplayOptions();
                 cardChoice = Console.ReadLine();
+                
+    // public Card(ConsoleKeyInfo cardChoice){
+    //     while(true){
+    //         if (cardChoice.Key == ConsoleKey.D1){
+    //             _card = "Rock";
+    //             break;
+    //         }
+    //         else if (cardChoice.Key == ConsoleKey.D2){
+    //             _card = "Paper";
+    //             break;
+    //         }
+    //         else if (cardChoice.Key == ConsoleKey.D3){
+    //             _card = "Scissors";
+    //             break;
+    //         }
+    //         else if (cardChoice.Key == ConsoleKey.F2){
+    //             _card = "win";
+    //             break;
+    //         }
+    //         else if (cardChoice.Key == ConsoleKey.F4){
+    //             _card = "loose";
+    //             break;
+    //         }
+    //         else{
+    //             Console.Clear();
+    //             Console.WriteLine("Improper selection input! \nPlease select card options '1', '2', or '3' by pressing just the number 1, 2, or 3");
+    //             _magicWizard.DisplayOptions();
+    //             cardChoice = Console.ReadKey();
             }
         }
     }
