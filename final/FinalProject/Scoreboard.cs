@@ -44,15 +44,15 @@ class Scoreboard{
         }
         else if (opponentCard.ReturnCard()== "win"){
             if (playerCard.ReturnCard()== "Paper"){
-                Card scissors = new("3");
+                Card scissors = new(ConsoleKey.D1);
                 return Fight(playerCard, scissors, roundCounter);
             }
             else if (playerCard.ReturnCard()== "Rock"){
-                Card paper = new("2");
+                Card paper = new(ConsoleKey.D2);
                 return Fight(playerCard, paper, roundCounter);
             }
             else{
-                Card rock = new("1");
+                Card rock = new(ConsoleKey.D3);
                 return Fight(playerCard, rock, roundCounter);
             }
         }

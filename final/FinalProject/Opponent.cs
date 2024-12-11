@@ -6,32 +6,71 @@ class Opponent : Person{
 
     public override void SelectHand(List<string> selectedHand){
         _hand = [];
-        if (selectedHand[0] == "1" ||selectedHand[0] == "2" ||selectedHand[0] == "3"){
-        Card card1 = new(selectedHand[0]);
-        _hand.Add(card1);
+        if (selectedHand[0] == "D1" ||selectedHand[0] == "D2" ||selectedHand[0] == "D3"){
 
-        Card card2 = new(selectedHand[1]);
-        _hand.Add(card2);
+            foreach(string item in selectedHand){
 
-        Card card3 = new(selectedHand[2]);
-        _hand.Add(card3);
+                if (item == "D1"){
+                    Card card = new(ConsoleKey.D1);
+                    _hand.Add(card);
+                }
+                if (item == "D2"){
+                    Card card = new(ConsoleKey.D2);
+                    _hand.Add(card);
+                }
+                if (item == "D3"){
+                    Card card = new(ConsoleKey.D3);
+                    _hand.Add(card);
+                }
+
+            }
         }
         else{
-        Random random = new();
-        int promptIndex = 1 + random.Next(3);
-        // Console.WriteLine(promptIndex);
-        Card card1 = new($"{promptIndex}");
-        _hand.Add(card1);
-        
-        int promptIndex2 = 1 + random.Next(3);
-        // Console.WriteLine(promptIndex2);
-        Card card2 = new($"{promptIndex2}");
-        _hand.Add(card2);
-
-        int promptIndex3 = 1 + random.Next(3);
-        // Console.WriteLine(promptIndex3);
-        Card card3 = new($"{promptIndex3}");
-        _hand.Add(card3);            
+            Random random = new();
+            int promptIndex = 1 + random.Next(3);
+            
+            if (promptIndex == 1){
+                Card card1 = new(ConsoleKey.D1);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 2){
+                Card card1 = new(ConsoleKey.D2);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 3){
+                Card card1 = new(ConsoleKey.D3);
+                _hand.Add(card1);
+            }
+            
+            promptIndex = 1 + random.Next(3);
+            
+            if (promptIndex == 1){
+                Card card1 = new(ConsoleKey.D1);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 2){
+                Card card1 = new(ConsoleKey.D2);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 3){
+                Card card1 = new(ConsoleKey.D3);
+                _hand.Add(card1);
+            }
+            
+            promptIndex = 1 + random.Next(3);
+            
+            if (promptIndex == 1){
+                Card card1 = new(ConsoleKey.D1);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 2){
+                Card card1 = new(ConsoleKey.D2);
+                _hand.Add(card1);
+            }
+            if (promptIndex == 3){
+                Card card1 = new(ConsoleKey.D3);
+                _hand.Add(card1);
+            }        
         }
     }
         
@@ -120,7 +159,7 @@ class Opponent : Person{
                 }
                 else{
                     _livesLost = livesLost;
-                    Card win = new("win");
+                    Card win = new(ConsoleKey.F2);
                     return win;
                 }
             }
@@ -146,10 +185,11 @@ class Opponent : Person{
                 }
                 else{
                     _livesLost = livesLost;
-                    Card loose = new("loose");
+                    Card loose = new(ConsoleKey.F4);
                     return loose;
                 }
             }
+            
             else {
                 Console.WriteLine("Yikes bad input on card selection for the boss  rand");
                 wayToSelectACard = Console.ReadLine();

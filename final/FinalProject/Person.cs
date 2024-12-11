@@ -1,5 +1,4 @@
 abstract class Person{
-    Card _ugly = new Card("1");
     public List<Card> _hand = [];
     private int _losses = 0;
 

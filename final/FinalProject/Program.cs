@@ -18,19 +18,38 @@ class Program
 
         opponent.SelectHand(boss.Menu());
 
+        Console.Clear();
         player1.SelectHand([]);
 
-        
-            int roundCounter = 1;
+        int roundCounter = 1;
 
-            magicWizard.DisplayRoundCounter(roundCounter);
-            magicWizard.DisplayBattleField();
+        magicWizard.DisplayRoundCounter(roundCounter);
+        magicWizard.DisplayBattleField();
 
         while(opponent.HasHand() && player1.HasHand()){
             tracker.Fight(player1.SelectCard(), opponent.SelectCard(boss.PlayStyle()), roundCounter);
             roundCounter ++;
         }
         player1.DisplayHandSelectionList();
+
+        string opponentName = boss.ReturnName();
+
+        if (opponent.HasHand()){
+            Console.WriteLine("\t\t\t _________________________________________________________________________________________________________________________");
+            Console.WriteLine("\t\t\t|                                                                                                                         |");
+            Console.WriteLine("\t\t\t|                                                   You Loose!                                                            |");
+            Console.WriteLine($"\t\t\t|                                              {opponentName} defeated you                                                  |");
+            Console.WriteLine("\t\t\t|_________________________________________________________________________________________________________________________|");
+        }
+        if (player1.HasHand()){
+            Console.Clear();
+            
+            Console.WriteLine("\t\t\t _________________________________________________________________________________________________________________________");
+            Console.WriteLine("\t\t\t|                                                                                                                         |");
+            Console.WriteLine("\t\t\t|                                                   You Win!                                                              |");
+            Console.WriteLine($"\t\t\t|                                            You defeated {opponentName}                                                    |");
+            Console.WriteLine("\t\t\t|_________________________________________________________________________________________________________________________|");
+        }
         
         
     }

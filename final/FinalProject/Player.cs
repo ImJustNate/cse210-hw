@@ -3,35 +3,40 @@ class Player : Person{
     // private List<string> _car = [];
 
     public override void SelectHand(List<string> hobo){
-        Console.WriteLine("TO SELECT CARD ONE:");
+        _hand = [new(ConsoleKey.F3), new(ConsoleKey.F3), new(ConsoleKey.F3)];
+
+        Console.WriteLine("SELECT 3 CARDS TO MAKE UP YOUR HAND");
         _magicWizard.DisplayOptions();
-        Card card1 = new(Console.ReadLine());
-        List<string> animation1 = card1.ReturnAnimationList();
-        _hand.Add(card1);
+        DisplayOnlyHand();
+        ConsoleKeyInfo prepCard = Console.ReadKey();
+        Card card1 = new(prepCard.Key);
+        _hand[0] = card1;
         
         Thread.Sleep(100);
         Console.Clear();
 
-        Console.WriteLine("TO SELECT CARD TWO:");
+        Console.WriteLine("SELECT 3 CARDS TO MAKE UP YOUR HAND");
         _magicWizard.DisplayOptions();
-        Card card2 = new(Console.ReadLine());
-        List<string> animation2 = card2.ReturnAnimationList();
-        _hand.Add(card2);
+        DisplayOnlyHand();
+        ConsoleKeyInfo prepCard2 = Console.ReadKey();
+        Card card2 = new(prepCard2.Key);
+        _hand[1] = card2;
 
         Thread.Sleep(100);
         Console.Clear();
 
-        Console.WriteLine("TO SELECT CARD THREE:");
+        Console.WriteLine("SELECT 3 CARDS TO MAKE UP YOUR HAND");
         _magicWizard.DisplayOptions();
-        Card card3 = new(Console.ReadLine());
-        List<string> animation3 = card3.ReturnAnimationList();
-        _hand.Add(card3);
+        DisplayOnlyHand();
+        ConsoleKeyInfo prepCard3 = Console.ReadKey();
+        Card card3 = new(prepCard3.Key);
+        _hand[2] = card3;
 
         Thread.Sleep(100);
         Console.Clear();
 
         // _hand[1].Loss(); // testing only delete later!
-        
+        _magicWizard.DisplayContinueHand();
         DisplayOnlyHand();
 
         Console.WriteLine("Press enter to continue");
@@ -51,9 +56,9 @@ class Player : Person{
                 );
             if (i == 0){
                 Console.WriteLine("{0,53}{1,53}{2,53}",
-                "|    Press 1 then ENTER to select this card     |",
-                "|    Press 2 then ENTER to select this card     |",
-                "|    Press 3 then ENTER to select this card     |"
+                "|          Press 1 to select this card          |",
+                "|          Press 2 to select this card          |",
+                "|          Press 3 to select this card          |"
                     );
                 i++;
             }
@@ -62,11 +67,6 @@ class Player : Person{
     }
 
     public void DisplayOnlyHand(){
-
-        Console.WriteLine("     _________________________________________________________________________________________________________________________________________________________");
-        Console.WriteLine("    |                                                                                                                                                         |");
-        Console.WriteLine("    |    Your hand is made up of the following cards. Press ENTER when you are ready to continue!                                                             |");
-        Console.WriteLine("    |_________________________________________________________________________________________________________________________________________________________|");
         for (int i = 0; i < 18 ; i++) {
             
             Console.WriteLine("{0,53}{1,53}{2,53}",
@@ -80,19 +80,19 @@ class Player : Person{
 
     public override Card SelectCard(string Car = "car"){
         DisplayHandSelectionList();
-        string selectedCard = Console.ReadLine();
+        ConsoleKey selectedCard = Console.ReadKey().Key;
           while(true){
-            if (selectedCard == "1"){
+            if (selectedCard == ConsoleKey.D1){
                 if (_hand[0].IsAlive()){
                     return _hand[0];
                     }
             }
-            if (selectedCard == "2"){
+            if (selectedCard == ConsoleKey.D2){
                 if (_hand[1].IsAlive()){
                     return _hand[1];
                     }
             }
-            if (selectedCard == "3"){
+            if (selectedCard == ConsoleKey.D3){
                 if (_hand[2].IsAlive()){
                     return _hand[2];
                     }
@@ -101,7 +101,7 @@ class Player : Person{
             Console.Clear();
             Console.WriteLine("Improper input please try again");
             DisplayHandSelectionList();
-            selectedCard = Console.ReadLine();
+            selectedCard = Console.ReadKey().Key;
             
           }
 
